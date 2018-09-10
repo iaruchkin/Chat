@@ -11,10 +11,7 @@ import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import servlets.SessionsServlet;
-import servlets.SignInServlet;
-import servlets.SignUpServlet;
-import servlets.UsersServlet;
+import servlets.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -28,6 +25,7 @@ public class Main {
         context.addServlet(new ServletHolder(new SessionsServlet(accountService)), "/api/v1/sessions");
         context.addServlet(new ServletHolder(new SignUpServlet(accountService)), "/signup");
         context.addServlet(new ServletHolder(new SignInServlet(accountService)), "/signin");
+        context.addServlet(new ServletHolder(new WebSocketChatServlet()), "/chat");
         ResourceHandler resource_handler = new ResourceHandler();
         resource_handler.setResourceBase("public_html");
 

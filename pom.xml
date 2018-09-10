@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>L2.1</groupId>
-    <artifactId>Autorization</artifactId>
-    <version>1.0</version>
+    <groupId>Project</groupId>
+    <artifactId>Chat</artifactId>
+    <version>0.1</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -14,6 +14,7 @@
         <com.h2database.h2.version>1.4.187</com.h2database.h2.version>
         <mysql.mysql-connector-java.version>5.1.35</mysql.mysql-connector-java.version>
         <org.hibernate.hibernate-core.version>4.3.10.Final</org.hibernate.hibernate-core.version>
+        <org.eclipse.jetty.version>9.3.0.M0</org.eclipse.jetty.version>
     </properties>
 
     <build>
@@ -43,15 +44,14 @@
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
-            <version>9.4.8.v20171121</version>
+            <version>${org.eclipse.jetty.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
-            <version>9.4.8.v20171121</version>
+            <version>${org.eclipse.jetty.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -72,6 +72,24 @@
             <artifactId>hibernate-core</artifactId>
             <version>${org.hibernate.hibernate-core.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.20</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty.websocket</groupId>
+            <artifactId>websocket-servlet</artifactId>
+            <version>${org.eclipse.jetty.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty.websocket</groupId>
+            <artifactId>websocket-server</artifactId>
+            <version>${org.eclipse.jetty.version}</version>
+        </dependency>
+
     </dependencies>
 
 
